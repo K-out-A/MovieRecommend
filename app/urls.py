@@ -18,9 +18,10 @@ from django.urls import path, include
 from .views import *
 
 urlpatterns = [
+    path('', signupfunc, name='welcome'),
     path('signup/', signupfunc, name='signup'),
     path('login/', loginfunc, name='login'),
-    path('logout/', logoutfunc, name='logout'),
+    path('/', logoutfunc, name='logout'),
     path('home/', homefunc, name='home'),
     path('create/', createfunc, name='create')
 ]

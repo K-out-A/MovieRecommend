@@ -1,0 +1,34 @@
+.my-content,.users-content{
+    margin: 10px auto;
+    background-color: greenyellow;
+}
+
+.center,.title{
+    text-align: center;
+}
+.user-name{
+    text-align: right;
+}
+.content{
+    margin: 50px auto;
+    background-color: darkseagreen;
+    padding: 10px;
+    height:auto;
+    width: 400px;
+}
+.movies{
+    background-color: honeydew;
+    margin: 10px auto;
+    display: flex;
+}
+.movie{
+    margin: 5px;
+    background-color: lightslategray;
+    height: 130px;
+    width: 100px;
+}
+
+.fotter{
+    background-color: darkolivegreen;
+    text-align: center;
+}

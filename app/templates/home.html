@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="padding:1em;">
+    <div class="page-header">
+        <h1>あなたの映画おすすめ３選</h1>
+        <a href="{% url 'logout' %}">ログアウト</a>
+    </div>
+    <div class="main">
+        <div class="my-content">
+            <h2 class="center">〇〇さんのおすすめ</h2>
+            <a href="{% url 'create' %}">編集</a>
+            <div class="content">
+                <div class="title"><p>【タイトル】〜おすすめ３選〜</p></div>
+                <div class="movies">
+                    <div class="movie"></div>
+                    <div class="movie"></div>
+                    <div class="movie"></div>    
+                </div>
+            </div>
+        </div>
+        <div class="users-content">
+            <h2 class="center">みなさんのおすすめ</h2>
+            <div class="content">
+                <div class="title"><p>【タイトル】〜おすすめ３選〜</p></div>
+                <div class="movies">
+                    <div class="movie"></div>
+                    <div class="movie"></div>
+                    <div class="movie"></div>    
+                </div>
+                <div class="user-name"><p>投稿者：〇〇さん</p></div>
+            </div>
+        </div>
+    </div>
+    <div class="fotter">
+        <p>お問い合わせ</p>
+        <p>高橋滉太とは</p>
+        <p>©2020-2021 Kota Takahashi</p>
+    </div>
+</div>
+{% endblock %}

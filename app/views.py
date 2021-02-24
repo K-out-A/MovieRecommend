@@ -12,7 +12,7 @@ def loginfunc(request):
     return render(request, 'login.html')
 
 def logoutfunc(request):
-    return redirect('login.html')
+    return redirect('welcome')
 
 def homefunc(request):
     #username = request.user.get_username()
@@ -37,6 +37,3 @@ def createfunc(request):
         return redirect('home.html')
     context = {'user':user, 'form':form}
     return render(request, 'home.html', context)
-
-    context = {}
-    return render(request, 'create.html', context)
