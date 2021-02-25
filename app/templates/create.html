@@ -18,12 +18,19 @@
             </div>
             <form action="">
                 <p>作品1</p>
+                <p>{{ form.movie1 }}</p>
                 <p>作品2</p>
+                <p>{{ form.movie2 }}</p>
                 <p>作品3</p>
+                <p>{{ form.movie3 }}</p>
                 <p>タイトル</p>
+                <p>{{ form.title }}</p>
                 <p>投稿者</p>
-                <p>twitter</p>
+                <p>{{ form.username }}</p>
+                <p>Twitterアドレス</p>
+                <p>{{ form.twitter }}</p>                
                 <p>メールアドレス</p>
+                <p>{{ form.email }}</p>
             </form>
             <a href="{% url 'home' %}">保存</a>
         </div>

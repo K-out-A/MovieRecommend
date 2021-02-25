@@ -21,7 +21,7 @@ urlpatterns = [
     path('', signupfunc, name='welcome'),
     path('signup/', signupfunc, name='signup'),
     path('login/', loginfunc, name='login'),
-    path('/', logoutfunc, name='logout'),
+    path('signup/', logoutfunc, name='logout'),
     path('home/', homefunc, name='home'),
     path('create/', createfunc, name='create')
 ]

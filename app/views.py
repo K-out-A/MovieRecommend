@@ -34,6 +34,6 @@ def createfunc(request):
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect('home.html')
+        return redirect('create.html')
     context = {'user':user, 'form':form}
-    return render(request, 'home.html', context)
+    return render(request, 'create.html', context)

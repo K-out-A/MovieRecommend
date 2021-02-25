@@ -12,6 +12,11 @@ class UserForm(forms.Form):
         max_length=100
     )
 
+    twitter = forms.CharField(
+        label='Twitterアドレス（任意）',
+        max_length=100
+    )
+
     email = forms.CharField(
         label='メールアドレス（任意）',
         max_length=100
