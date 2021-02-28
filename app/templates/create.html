@@ -7,7 +7,7 @@
     </div>
     <div class="main">
         <div class="my-content">
-            <h2 class="center">〇〇さんのおすすめ</h2>
+            <h2 class="center">{{ username }}さんのおすすめ</h2>
             <div class="content">
                 <div class="title"><p>【タイトル】〜おすすめ３選〜</p></div>
                 <div class="movies">
@@ -16,23 +16,41 @@
                     <div class="movie"></div>    
                 </div>
             </div>
-            <form action="">
-                <p>作品1</p>
-                <p>{{ form.movie1 }}</p>
-                <p>作品2</p>
-                <p>{{ form.movie2 }}</p>
-                <p>作品3</p>
-                <p>{{ form.movie3 }}</p>
-                <p>タイトル</p>
-                <p>{{ form.title }}</p>
-                <p>投稿者</p>
-                <p>{{ form.username }}</p>
-                <p>Twitterアドレス</p>
-                <p>{{ form.twitter }}</p>                
-                <p>メールアドレス</p>
-                <p>{{ form.email }}</p>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <table align="center" style="width:75%;">
+                    <tr>
+                        <th>タイトル</th>
+                        <th>{{ form.title }}</th>
+                    </tr>
+                    <tr>
+                        <th>作品１</th>
+                        <th>{{ form.movie1 }}</th>
+                    </tr>
+                    <tr>
+                        <th>作品２</th>
+                        <th>{{ form.movie2 }}</th>
+                    </tr>
+                    <tr>
+                        <th>作品３</th>
+                        <th>{{ form.movie3 }}</th>
+                    </tr>
+                    <tr>
+                        <th>投稿者</th>
+                        <th>{{ username }}</th>
+                    </tr>
+                    <tr>
+                        <th>Twitterアドレス</th>
+                        <th>{{ form.twitter }}</th>
+                    </tr>
+                    <tr>
+                        <th>メールアドレス</th>
+                        <th>{{ form.email }}</th>
+                    </tr>
+                </table>
+                <a href="{% url 'home' %}">保存</a>
+                <input type="submit" name="Create" id="">    
             </form>
-            <a href="{% url 'home' %}">保存</a>
         </div>
     </div>
     <div class="fotter">

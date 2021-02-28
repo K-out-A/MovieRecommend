@@ -7,10 +7,10 @@
     </div>
     <div class="main">
         <div class="my-content">
-            <h2 class="center">〇〇さんのおすすめ</h2>
+            <h2 class="center">{{ username }}さんのおすすめ</h2>
             <a href="{% url 'create' %}">編集</a>
             <div class="content">
-                <div class="title"><p>【タイトル】〜おすすめ３選〜</p></div>
+                <div class="title"><p>【タイトル】{{ title }}</p></div>
                 <div class="movies">
                     <div class="movie"></div>
                     <div class="movie"></div>
@@ -20,15 +20,17 @@
         </div>
         <div class="users-content">
             <h2 class="center">みなさんのおすすめ</h2>
+            {% for user in users %}
             <div class="content">
-                <div class="title"><p>【タイトル】〜おすすめ３選〜</p></div>
+                <div class="title"><p>【タイトル】{{ user.title }}</p></div>
                 <div class="movies">
                     <div class="movie"></div>
                     <div class="movie"></div>
                     <div class="movie"></div>    
                 </div>
-                <div class="user-name"><p>投稿者：〇〇さん</p></div>
+                <div class="user-name"><p>投稿者：{{ user.id }}さん</p></div>
             </div>
+            {% endfor %}
         </div>
     </div>
     <div class="fotter">
