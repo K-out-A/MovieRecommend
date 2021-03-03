@@ -40,8 +40,10 @@ def loginfunc(request):
         password2 = request.POST['password']
         user = authenticate(request, username=username2, password=password2)
         if user is not None:#そのユーザがいる場合はログイン処理をする
+            user_id = request.user.id
+            users = UserModel.objects.all()
             login(request, user)
-            return render(request, 'home.html', {'username':username2})
+            return render(request, 'home.html', {'username':username2, 'users':users, 'user_id':user_id,})
         else:#いない場合は
             return render(request, 'login.html', {'error':'名前かパスワードが間違っていない？'})
     return render(request, 'login.html', {})
@@ -53,8 +55,9 @@ def homefunc(request):
     
     #context = {'username':username}
     username = request.user.get_username()
-    print(type(username))
-    print(request.user.id)
+    user_id = request.user.id
+    print("user-name:{} type:{}".format(username,type(username)))
+    print("user-id:{} type:{}".format(request.user.id, type(request.user.id)))
     #main.user = UserModel.objects.get(id=request.user.id)
     users = UserModel.objects.all()
     #print(user.id)
@@ -67,7 +70,7 @@ def homefunc(request):
         if form.is_valid():
             form.save()
         return redirect('home.html')
-    context = {'username':username, 'users':users, 'form':form}
+    context = {'username':username, 'users':users, 'user_id':user_id, 'form':form}
     return render(request, 'home.html', context)
 
 
@@ -76,13 +79,13 @@ def createfunc(request):
     print(username)
     print(request.user.id)
 
-    #user = UserModel.objects.get(id=pk)
-    user = UserModel.objects.all()
+    user = UserModel.objects.get(pk=request.user.id)
+    #user = UserModel.objects.all()
     #form = UserForm(instance=user)
-    form = UserForm()
+    form = UserForm(instance=user)
     if request.method == 'POST':
-        #form = UserForm(request.POST, instance=user)
-        form = UserForm(request.POST)
+        form = UserForm(request.POST, instance=user)
+        #form = UserForm(request.POST)
         if form.is_valid():
             form.save()
         return redirect('home')

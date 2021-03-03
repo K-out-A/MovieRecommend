@@ -1,3 +1,32 @@
+.navbar-nav{
+    flex-direction: row!important;
+}
+
+.nav-color{
+    color: black;
+}
+
+.nav-color:hover{
+    color:coral;
+}
+
+.nav-color:after{
+    content: "";
+    display: block;
+    height: 2px;
+    background: coral;
+    margin-top: 6px;
+    opacity:0;
+    transform: translateY(12px);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-color:hover:after{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+
 .my-content,.users-content{
     margin: 10px auto;
     background-color: greenyellow;
