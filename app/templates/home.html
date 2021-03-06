@@ -7,7 +7,6 @@
     <div class="main">
         <div class="my-content">
             <h2 class="center">{{ username }}さんのおすすめ</h2>
-            <a href="{% url 'create' %}">編集</a>
             <div class="content">
                 {% for user in users %}
                 {% if user.id == user_id %}
@@ -17,6 +16,7 @@
                     <div class="movie"></div>
                     <div class="movie"></div>    
                 </div>
+                <a class="link" href="{% url 'create' %}"></a>
                 {% endif %}
                 {% endfor %}
             </div>
@@ -32,16 +32,12 @@
                     <div class="movie"></div>
                     <div class="movie"></div>    
                 </div>
+                <a class="link" href="{% url 'view' user.id %}"></a>
                 <div class="user-name"><p>投稿者：{{ user.username }}さん</p></div>
             </div>
             {% endif %}
             {% endfor %}
         </div>
-    </div>
-    <div class="fotter">
-        <p>お問い合わせ</p>
-        <p>高橋滉太とは</p>
-        <p>©2020-2021 Kota Takahashi</p>
     </div>
 </div>
 {% endblock %}

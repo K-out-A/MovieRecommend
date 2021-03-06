@@ -6,7 +6,7 @@
     </div>
     <div class="main">
         <div class="my-content">
-            <h2 class="center">{{ username }}さんのおすすめ</h2>
+            <h2 class="center">{{ user.username }}さんのおすすめ</h2>
             <div class="content">
                 <div class="title"><p>【タイトル】{{ user.title }}</p></div>
                 <div class="movies">
@@ -14,41 +14,25 @@
                     <div class="movie"></div>
                     <div class="movie"></div>    
                 </div>
-            </div>
-            <form method="POST" action="">
-                {% csrf_token %}
                 <table align="center" style="width:75%;">
                     <tr>
-                        <th>タイトル</th>
-                        <th>{{ form.title }}</th>
-                    </tr>
-                    <tr>
                         <th>作品１</th>
-                        <th>{{ form.movie1 }}</th>
+                        <th>{{ user.movie1 }}</th>
                     </tr>
                     <tr>
                         <th>作品２</th>
-                        <th>{{ form.movie2 }}</th>
+                        <th>{{ user.movie2 }}</th>
                     </tr>
                     <tr>
                         <th>作品３</th>
-                        <th>{{ form.movie3 }}</th>
-                    </tr>
-                    <tr>
-                        <th>投稿者</th>
-                        <th>{{ form.username }}</th>
+                        <th>{{ user.movie3 }}</th>
                     </tr>
                     <tr>
                         <th>Twitterアドレス</th>
-                        <th>{{ form.twitter }}</th>
-                    </tr>
-                    <tr>
-                        <th>メールアドレス</th>
-                        <th>{{ form.email }}</th>
+                        <th>{{ user.twitter }}</th>
                     </tr>
                 </table>
-                <input type="submit" name="Create" id="">    
-            </form>
+            </div>
         </div>
     </div>
 </div>

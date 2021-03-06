@@ -11,7 +11,8 @@ from django.urls import reverse_lazy
 
 
 # Create your views here.
-
+def welcomefunc(request):
+    return render(request, 'welcome.html', {})
 
 def signupfunc(request):
     user = UserModel()
@@ -91,3 +92,8 @@ def createfunc(request):
         return redirect('home')
     context = {'username':username, 'user':user, 'form':form}
     return render(request, 'create.html', context)
+
+def viewfunc(request, pk):
+    user = UserModel.objects.get(id=pk)
+    context = {'user':user}
+    return render(request, 'view.html', context)
