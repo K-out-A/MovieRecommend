@@ -35,10 +35,6 @@
                         <th>{{ form.movie3 }}</th>
                     </tr>
                     <tr>
-                        <th>投稿者</th>
-                        <th>{{ form.username }}</th>
-                    </tr>
-                    <tr>
                         <th>Twitterアドレス</th>
                         <th>{{ form.twitter }}</th>
                     </tr>
@@ -46,8 +42,15 @@
                         <th>メールアドレス</th>
                         <th>{{ form.email }}</th>
                     </tr>
+                    <tr hidden>
+                        <th>投稿者</th>
+                        <th>{{ form.username }}</th>
+                    </tr>
                 </table>
-                <input type="submit" name="Create" id="">    
+                <br>
+                <div class="center">
+                    <input type="submit" name="Create" id="">    
+                </div>
             </form>
         </div>
     </div>
