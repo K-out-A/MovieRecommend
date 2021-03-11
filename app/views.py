@@ -44,7 +44,8 @@ def loginfunc(request):
             user_id = request.user.id
             users = UserModel.objects.all()
             login(request, user)
-            return render(request, 'home.html', {'username':username2, 'users':users, 'user_id':user_id,})
+            return redirect('home')
+            #return render(request, 'home.html', {'username':username2, 'users':users, 'user_id':user_id,})
         else:#いない場合は
             return render(request, 'login.html', {'error':'名前かパスワードが間違っていない？'})
     return render(request, 'login.html', {})

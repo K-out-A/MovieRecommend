@@ -1,6 +1,5 @@
 body {
     background-color: rgba(0, 0, 0, 0.8);
-    /*background-color: cornsilk;*/
     margin: 0;
     display: flex;
     flex-flow: column;
@@ -21,7 +20,6 @@ body {
     margin-right: -25px;
 }
   
-
 .navbar-nav{
     flex-direction: row!important;
 }
@@ -60,8 +58,7 @@ body {
 
 .btn-wrapper {
     text-align: center;
-  }
-  
+}
   
 .btn-signup {
     background-color: #3b5998;
@@ -96,9 +93,11 @@ body {
 .page-header{
     margin-top:50px;
 }
+
 .page-header h1{
     color: cornsilk;
 }
+
 .main{
     flex: 1;
 }
@@ -106,9 +105,11 @@ body {
 .seashell{
     background-color: seashell;
 }
+
 .details{
     margin: 100px auto ;
 }
+
 .detail{
     display: flex;
     justify-content:center;
@@ -116,31 +117,37 @@ body {
     color: antiquewhite;
     text-align: center;
 }
+
 .detail h2{
     color: silver;
 }
+
 .detail-icon{
     background-size: cover;
     height: 200px;
     width: 200px;
     border-radius: 100px;
 }
+
 .good {
     background-image: url("/static/img/good.png");
 }
+
 .interact {
     background-image: url("/static/img/interact.png");
 }
+
 .detect {
     background-image: url("/static/img/detect.png");
 }
+
 .detail-right{
     height: 200px;
     margin-left: 50px;
-    display: table-cell;
-    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
 
 .my-content,.users-content{
     margin: 10px auto;
@@ -154,9 +161,11 @@ body {
 .center,.title{
     text-align: center;
 }
+
 .user-name{
     text-align: right;
 }
+
 .content{
     opacity: 0.9;
     margin: 50px auto;
@@ -188,12 +197,22 @@ body {
     margin: 10px auto;
     display: flex;
     justify-content:center;
+    align-items: center;
 }
+
 .movie{
     margin: 5px;
     background-color: lightslategray;
     height: 130px;
     width: 100px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.movie p{
+    font-size: 20px;
+    transform: rotate(-20deg);
 }
 
 .fotter{
