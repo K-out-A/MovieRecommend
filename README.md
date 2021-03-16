@@ -6,7 +6,7 @@
 - APIの情報から該当する映画ジャケットを取得しTOPページに表示する。
 
 # デモ
-
+![movie](https://user-images.githubusercontent.com/66913031/111263412-2d062e80-8669-11eb-8255-f3acef9ee604.gif)
 
 ※事前にいくつかユーザーを作っているので、TOPページの概観は少々異なります。
 
